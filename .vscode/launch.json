@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CLIMain",
+            "request": "launch",
+            "mainClass": "cmd.CLIMain",
+            "projectName": "RFTX-CLI_8767bd4a"
+        }
+    ]
+}
