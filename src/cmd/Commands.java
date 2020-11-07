@@ -26,4 +26,7 @@ public class Commands extends Thread{
         }
         
     }
+    public void syntaxErrorInfo(){
+        Out.sayln("syntax error.");
+    }
 }

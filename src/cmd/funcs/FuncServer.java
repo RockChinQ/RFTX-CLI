@@ -1,12 +1,15 @@
 package cmd.funcs;
 
+import java.util.Date;
+
 import cmd.AbstractFunc;
 import cmd.AbstractProcessor;
 import cmd.CLIMain;
 import cmd.Out;
 
 public class FuncServer implements AbstractFunc {
-
+    public static boolean running=false;
+    public static long startTime=0;
     @Override
     public String getDescription() {
         // TODO Auto-generated method stub
@@ -41,6 +44,10 @@ public class FuncServer implements AbstractFunc {
         switch(arg0[0]){
             case "start":{
                 try{
+                    if(running){
+                        Out.sayln("server is already running.");
+                        break;
+                    }
                     if(arg0.length<2){
                         Out.sayln("usage:server start <port>");
                         break;
@@ -49,6 +56,8 @@ public class FuncServer implements AbstractFunc {
                     CLIMain.host.initServer(Integer.parseInt(arg0[1]));
                     CLIMain.host.server.start();
                     Out.sayln("server started at port:"+arg0[1]);
+                    running=true;
+                    startTime=new Date().getTime();
                 }catch(Exception e){
                     Out.sayln("failed to start server:\n"+CLIMain.getErrorInfo(e));
                 }
@@ -58,9 +67,14 @@ public class FuncServer implements AbstractFunc {
                 try{
                     CLIMain.host.server.stop();
                     Out.sayln("server stopped.");
+                    running=false;
                 }catch(Exception e){
                     Out.sayln("failed to stop server:\n"+CLIMain.getErrorInfo(e));
                 }
+                break;
+            }
+            default:{
+                CLIMain.cmdThr.syntaxErrorInfo();
                 break;
             }
         }
