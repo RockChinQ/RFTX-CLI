@@ -6,6 +6,8 @@ import java.io.StringWriter;
 import com.rftx.core.RFTXHost;
 import com.rftx.util.Debugger;
 
+import listener.*;
+
 public class CLIMain {
     public final static String VERSION_STRING="20201103";
     public final static String RFTX_VERSION="v0.1-alpha";
@@ -13,11 +15,16 @@ public class CLIMain {
     public static Commands cmdThr=new Commands();
 
     public static RFTXHost host=new RFTXHost("localhost");
+
+    public static ServerConn serverConn=new ServerConn();
+    public static ClientConn clientConn=new ClientConn();
     public static void main(String[] args) throws Exception{
         // Debugger.debug=true;
         Out.sayln( "Rock's File Transfer eXtended lib-Command Line Interface\n");
         processor.run("ver");
         Out.sayln( "https://github.com/RockChinQ/RFTX2\n");
+        host.initClient();
+        host.client.setClientConnListener(clientConn);
         cmdThr.start();
     }
     public static String getErrorInfo(Exception e){

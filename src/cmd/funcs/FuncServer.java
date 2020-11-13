@@ -54,6 +54,7 @@ public class FuncServer implements AbstractFunc {
                     }
                     Out.sayln("starting server..");
                     CLIMain.host.initServer(Integer.parseInt(arg0[1]));
+                    CLIMain.host.server.setServerConnListener(CLIMain.serverConn);
                     CLIMain.host.server.start();
                     Out.sayln("server started at port:"+arg0[1]);
                     running=true;
