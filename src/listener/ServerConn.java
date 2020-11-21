@@ -10,7 +10,7 @@ public class ServerConn implements ServerConnListener {
     @Override
     public void authenticated(ControlConn arg0) {
         // TODO Auto-generated method stub
-        Out.saySub("NOTI", arg0.peerName+" conn authenticated.");
+        Out.saySub("Server", arg0.peerName+" conn authenticated.");
     }
 
     @Override
@@ -22,7 +22,7 @@ public class ServerConn implements ServerConnListener {
     @Override
     public void disconnected(ControlConn arg0) {
         // TODO Auto-generated method stub
-        Out.saySub("NOTI", arg0.peerName+" conn disconnected.");
+        Out.saySub("Server", arg0.peerName+" conn disconnected.");
 
     }
     

@@ -35,7 +35,7 @@ public class FuncToken implements AbstractFunc {
     public void run(String[] arg0, String arg1, AbstractProcessor arg2) {
         // TODO Auto-generated method stub
         if(arg0.length<1){
-            Out.sayln("syntax error.");
+            CLIMain.cmdThr.syntaxErrorInfo();
             return;
         }
         switch(arg0[0]){
@@ -54,13 +54,13 @@ public class FuncToken implements AbstractFunc {
                     break;
                 }
                 CLIMain.host.getAuthenticator().getAuthTokenMap().put(arg0[1], arg0[2]);
-                Out.sayln("add acceptable token:"+arg0[1]+":"+arg0[2]);
+                Out.sayln("add valid token:"+arg0[1]+":"+arg0[2]);
                 break;
             }
             case "ls":{
-                Out.sayThisLine("token use to connect a RFTXServer:"+CLIMain.host.getAuthenticator().clientToken+"\n");
-                Out.sayThisLine("-----------\n");
-                Out.sayThisLine("list acceptable client token("+(CLIMain.host.getAuthenticator().getAuthTokenMap().size())+"):\n");
+                Out.sayThisLine("host token:"+CLIMain.host.getAuthenticator().clientToken+"\n");
+                // Out.sayThisLine("-----------\n");
+                Out.sayThisLine("valid client token("+(CLIMain.host.getAuthenticator().getAuthTokenMap().size())+"):\n");
                 for(var key:CLIMain.host.getAuthenticator().getAuthTokenMap().keySet()){
                     Out.sayThisLine(key+" "+CLIMain.host.getAuthenticator().getAuthTokenMap().get(key)+"\n");
                 }

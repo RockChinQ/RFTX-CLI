@@ -27,15 +27,18 @@ public class FuncExit implements AbstractFunc {
 
     @Override
     public String[] getParamsModel() {
-        // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public void run(String[] arg0, String arg1, AbstractProcessor arg2) {
-        // TODO Auto-generated method stub
         Out.sayThisLine("press ENTER to exit.\n");
         CLIMain.cmdThr.stop();
+        try {
+            CLIMain.host.exit();
+        } catch (Exception e) {
+            Out.sayln("failed to exit:\n"+CLIMain.getErrorInfo(e));
+        }
     }
     
 }

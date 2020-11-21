@@ -11,6 +11,8 @@ public class CLIProcessor extends AbstractProcessor {
         this.registerFunc(new FuncToken());
         this.registerFunc(new FuncName());
         this.registerFunc(new FuncClient());
+        this.registerFunc(new FuncConn());
+        this.registerFunc(new FuncRFTX());
 
         this.setDefaultFunc(new FuncDefault());
     }

@@ -38,7 +38,7 @@ public class FuncServer implements AbstractFunc {
     public void run(String[] arg0, String arg1, AbstractProcessor arg2) {
         // TODO Auto-generated method stub
         if(arg0.length<1){
-            Out.sayln("syntax error.");
+            CLIMain.cmdThr.syntaxErrorInfo();
             return;
         }
         switch(arg0[0]){
@@ -66,6 +66,10 @@ public class FuncServer implements AbstractFunc {
             }
             case "stop":{
                 try{
+                    if(!running){
+                        Out.sayln("server is not running.");
+                        break;
+                    }
                     CLIMain.host.server.stop();
                     Out.sayln("server stopped.");
                     running=false;

@@ -33,4 +33,7 @@ public class CLIMain {
         e.printStackTrace(pw);
         return sw.toString().replaceAll("\t","    ");
     }
+    public static String limitStrLen(String text,int length){
+        return String.format("%-" + length + "." + length + "s", text);
+    }
 }

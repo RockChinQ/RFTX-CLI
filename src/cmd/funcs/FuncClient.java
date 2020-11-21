@@ -47,7 +47,7 @@ public class FuncClient implements AbstractFunc {
                         String[] targetHost=arg0[1].split(":");
                         CLIMain.host.client.connect(targetHost[0],Integer.parseInt(targetHost[1]), CLIMain.host.getAuthenticator().clientToken);
                     }catch(Exception e){
-                        Out.sayln("cannot create conn:\n"+CLIMain.getErrorInfo(e));
+                        Out.sayln("failed to establish conn:\n"+CLIMain.getErrorInfo(e));
                     }
                     break;
                 }
