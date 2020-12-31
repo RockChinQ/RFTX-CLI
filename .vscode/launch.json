@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CountLine",
+            "request": "launch",
+            "mainClass": "test.CountLine",
+            "projectName": "RFTX-CLI_7bb39c1f"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CLIMain",
+            "request": "launch",
+            "mainClass": "cmd.CLIMain",
+            "projectName": "RFTX-CLI_7bb39c1f"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - CLIMain",
             "request": "launch",
             "mainClass": "cmd.CLIMain",

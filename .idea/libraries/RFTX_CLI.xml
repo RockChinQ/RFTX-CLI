@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="RFTX-CLI">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/RFTX-CLI.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
