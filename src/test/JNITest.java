@@ -4,6 +4,7 @@ import jni.JniInterface;
 
 public class JNITest {
     public static void main(String[] args) {
+//        JniInterface.setDebugMode(true);
         System.out.println("我:"+(int)('我')+"是:"+(int)('是')+"你:"+(int)'你'+"爸:"+(int)'爸');
         for (;;) {
             System.out.print("type:");

@@ -1,0 +1,1 @@
+java -jar out\artifacts\%1\RFTX-CLI.jar
