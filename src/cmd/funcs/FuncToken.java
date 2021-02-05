@@ -61,7 +61,7 @@ public class FuncToken implements AbstractFunc {
                 Out.sayThisLine("host token:"+CLIMain.host.getAuthenticator().clientToken+"\n");
                 // Out.sayThisLine("-----------\n");
                 Out.sayThisLine("valid client token("+(CLIMain.host.getAuthenticator().getAuthTokenMap().size())+"):\n");
-                for(var key:CLIMain.host.getAuthenticator().getAuthTokenMap().keySet()){
+                for(String key:CLIMain.host.getAuthenticator().getAuthTokenMap().keySet()){
                     Out.sayThisLine(key+" "+CLIMain.host.getAuthenticator().getAuthTokenMap().get(key)+"\n");
                 }
                 Out.sayln("\ndone.                  ");
